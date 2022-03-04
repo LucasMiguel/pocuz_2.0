@@ -10,10 +10,12 @@ function createWindow() {
         height: 413,
         center: true,
         skipTaskbar: true,
-        resizable:false,
+        resizable: false,
         autoHideMenuBar: true,
         title: "Pocuz",
-        icon:"%PUBLIC_URL%/favicon.ico"
+        icon: path.join(__dirname, "images/icon.ico"),
+        backgroundColor: "#F0F3F3",
+        titleBarStyle: "customButtonsOnHover"
     });
 
     const startUrl = isDev ? 'http://localhost:3000' : `file://${path.join(__dirname, '../build/index.html')}`;

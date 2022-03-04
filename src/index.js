@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import MainWindow from './templates/mainWindow';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div className='mt-2'>
-      <h1 className="text-3xl font-bold underline text-green-600">
-        Hello world!
-      </h1>
-      <button className='bg-slate-600 text-white rounded p-1'>Alguma coisa</button>
+  <div id='setDarkMode' className=''>
+    <div className='bg-[#F0F3F3] dark:bg-[#011627]  h-screen'>
+      <React.StrictMode>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainWindow />} />
+          </Routes>
+        </BrowserRouter>
+      </React.StrictMode>
     </div>
-  </React.StrictMode>,
+  </div>,
   document.getElementById('root')
 );
 

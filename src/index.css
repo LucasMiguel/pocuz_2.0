@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* importa a fonte externa */
+@font-face {
+  font-family: "Lato";
+  src: url("../fonts/Lato-Light.ttf") format("opentype");
+  font-weight: lighter;
+}
+
+/* Coloca a fonte Lato como padrão para todo o código */
+@layer base {
+  html {
+    font-family: Lato, system-ui, sans-serif;
+  }
+}
