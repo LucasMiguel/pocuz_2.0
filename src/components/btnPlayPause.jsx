@@ -8,7 +8,7 @@ import React from "react";
  */
 function BtnPlayPause(props) {
     /**Variável que irá armazenar a cor de acordo com o status do tempo*/
-    var color = props.isConcentration? "#E63635" : "#79C061";
+    var color = props.isConcentration ? "#E63635" : "#79C061";    
     /**Variável com o valor do icone do botão */
     var icon = props.isPlay ?
         <svg width="45" height="45" viewBox="0 0 100 100" className={`fill-white`} xmlns="http://www.w3.org/2000/svg">
@@ -20,7 +20,7 @@ function BtnPlayPause(props) {
         </svg>;
 
     return (
-        <button className={`flex justify-center items-center w-[70px] h-[70px] border-2 hover:scale-105 bg-[${color}] border-[${color}] rounded-[44px]`} onClick={props.click}>
+        <button className={`flex shadow-sm shadow-slate-500 justify-center items-center w-[70px] h-[70px] border-2 hover:scale-105 bg-[${color}] border-none rounded-[44px]`} onClick={props.click}>
             {icon}
         </button>
     );
