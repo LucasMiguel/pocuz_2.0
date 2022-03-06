@@ -9,7 +9,7 @@ import LabelTime from "../components/LabelTime";
 export default function MainWindow(props) {
     var cicles = [];
     for (let i = 0; i < props.totalCycles; i++) {
-        cicles.push(<Circles isfull={i < props.cyclesCount ? true : false} />)
+        cicles.push(<Circles key={i} isfull={i < props.cyclesCount ? true : false} />)
     }
     return (
         <div className="grid justify-items-center">
@@ -18,9 +18,9 @@ export default function MainWindow(props) {
                 {cicles}
             </div>
             <div className="inline-flex space-x-10 items-center mt-[40px]">
-                <BtnAssistant isConcentration={props.isConcentration} />
-                <BtnPlayPause isPlay={props.isPlay} isConcentration={props.isConcentration} click={props.playPauseClick} />
-                <BtnAssistant isReset={true} isConcentration={props.isConcentration} click={props.resetClick} />
+                <BtnAssistant isConcentration={props.isConcentration} onClick={props.jumpCycle}/>
+                <BtnPlayPause isPlay={props.isPlay} isConcentration={props.isConcentration} onClick={props.playPauseClick} />
+                <BtnAssistant isReset={true} isConcentration={props.isConcentration} onClick={props.resetClick} />
             </div>
             <div className="flex absolute bottom-2 right-2">
                 <Link to="/settings">

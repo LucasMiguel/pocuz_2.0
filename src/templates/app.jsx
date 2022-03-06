@@ -48,7 +48,6 @@ export default class App extends React.Component {
                 isPlay: !this.state.isPlay
             });
             clearInterval(this.isCount);
-            console.log(this.state.isPlay);
         } else {
             this.setState({
                 time: this.state.time - 1
@@ -67,12 +66,23 @@ export default class App extends React.Component {
             clearInterval(this.isCount);
         }
     }
+    /**Função que irá pular para o próximo ciclo */
+    jumpCycle = ()=>{
+        this.setState({
+            time: this.state.isConcentration ? (this.totalCycles === this.state.cyclesCount ? this.longTime : this.breakTime) : this.concentrationTime,
+            isConcentration: !this.state.isConcentration,
+            cyclesCount: this.totalCycles === this.state.cyclesCount ? 0 : this.state.isConcentration ? this.state.cyclesCount : this.state.cyclesCount + 1,
+            isPlay: true
+        });
+        clearInterval(this.isCount);
+    }
 
     /** Função que irá resetar o tempo*/
     resetClick = () => {
         this.setState({
-            time: this.timeConcentration
-        })
+            time: this.state.isConcentration ? this.concentrationTime: (this.totalCycles === this.state.cyclesCount ? this.longTime : this.breakTime),            
+        });
+        
     }
 
     render() {
@@ -91,6 +101,7 @@ export default class App extends React.Component {
                                         isPlay={this.state.isPlay}
                                         playPauseClick={this.playPauseClick}
                                         resetClick={this.resetClick}
+                                        jumpCycle={this.jumpCycle}
                                     />
                                 } />
                             </Routes>

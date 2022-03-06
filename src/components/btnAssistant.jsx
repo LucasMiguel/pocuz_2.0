@@ -28,7 +28,7 @@ function BtnAssistant(props) {
     }
 
     return (
-        <button className={`flex shadow-sm shadow-slate-500  dark:shadow-slate-100 justify-center items-center w-[45px] h-[45px] border-2 hover:scale-105 ${bgColor} border-none rounded-[44px]`} onClick={props.click}>
+        <button className={`flex shadow-sm shadow-slate-500  dark:shadow-slate-100 justify-center items-center w-[45px] h-[45px] border-2 hover:scale-105 ${bgColor} border-none rounded-[44px]`} onClick={props.onClick}>
             {icon}
         </button>
     );
