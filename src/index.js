@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import MainWindow from './templates/mainWindow';
 
 ReactDOM.render(
-  <div id='setDarkMode' className='dark'>
+  <div id='setDarkMode' className=''>
     <div className='bg-[#F0F3F3] dark:bg-[#011627]  h-screen'>
       <React.StrictMode>
         <BrowserRouter>
