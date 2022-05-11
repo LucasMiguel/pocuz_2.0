@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import MainWindow from './mainWindow';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 export default class App extends React.Component {
     constructor(props) {
@@ -83,7 +83,7 @@ export default class App extends React.Component {
             time: this.state.isConcentration ? this.concentrationTime: (this.totalCycles === this.state.cyclesCount ? this.longTime : this.breakTime),            
         });
         
-    }
+    }    
 
     render() {
         return (
